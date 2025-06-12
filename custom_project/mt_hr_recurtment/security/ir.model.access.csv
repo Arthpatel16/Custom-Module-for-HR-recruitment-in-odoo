@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_applicant_resume_ai,access_hr_applicant_resume_ai,model_hr_applicant,base.group_user,1,1,1,1
+access_hr_job_resume_match,access_hr_job_resume_match,model_hr_job,base.group_user,1,1,1,1
+access_hr_applicant_resume_match,access_hr_applicant_resume_match,model_hr_applicant,base.group_user,1,1,1,1
+access_hr_job_skill,access_access_hr_job_skill,model_hr_job_skill,base.group_user,1,1,1,1
+access_hr_job_skill_rel,access_access_hr_job_skill_rel,model_hr_job_skill_rel,base.group_user,1,1,1,1

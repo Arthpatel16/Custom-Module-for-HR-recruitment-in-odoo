@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_applicant_view_form_resume_inherit" model="ir.ui.view">
+        <field name="name">hr.applicant.resume.inherit.view</field>
+        <field name="model">hr.applicant</field>
+        <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='department_id']" position="after">
+                <field name="resume_atteched_filename" invisible="1"/>
+                <field name="resume_atteched" filename="resume_atteched_filename"/>
+                <field name="resume_score" readonly="1" widget="progressbar" options="{'max_value': 100}"/>
+                <field name="must_have_matched_skills_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                <field name="avg_skill_progress" widget="percentage_pie" readonly="1"/>
+                <field name="total_score" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="hr_applicant_view_tree_inherit" model="ir.ui.view">
+        <field name="name">hr.applicant.tree.inherit</field>
+        <field name="model">hr.applicant</field>
+        <field name="inherit_id" ref="hr_recruitment.crm_case_tree_view_job"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="default_order">total_score dsc</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_name']" position="after">
+                <field name="total_score"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="hr_applicant_view_search_inherit" model="ir.ui.view">
+        <field name="name">hr.applicant.view.search.inherit.must.have.skills</field>
+        <field name="model">hr.applicant</field>
+        <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_search_bis"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <filter string="Must Have Skills" name="must_have_skills" domain="[('must_have_matched_skills_ids', '!=', False)]"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

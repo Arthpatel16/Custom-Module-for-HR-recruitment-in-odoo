@@ -1,0 +1,18 @@
+<odoo>
+  <record id="view_job_form_inherit_resume_match" model="ir.ui.view">
+    <field name="name">hr.job.form.resume.match</field>
+    <field name="model">hr.job</field>
+    <field name="inherit_id" ref="hr.view_hr_job_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//group[@name='recruitment']" position="inside">
+        <field name="must_have_skill_rel_ids">
+            <tree editable="bottom">
+                <field name="skill_id"/>
+                <field name="level_id"/>
+                <field name="match_percent" widget="progressbar" options="{'max_value': 100}"/>
+            </tree>
+        </field>
+      </xpath>  
+    </field>
+  </record>
+</odoo>

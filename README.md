@@ -14,4 +14,18 @@ This project is an AI-powered enhancement to the Odoo `hr_recruitment` module. I
 - ✅ Easily extendable for NLP-based enhancements
 
 ## 📂 Module Structure
-
+intelligent_candidate_screening/
+├── init.py
+├── manifest.py
+├── models/
+│ └── hr_applicant.py
+├── views/
+│ └── hr_applicant_views.xml
+├── static/
+│ └── src/
+│ ├── js/
+│ │ └── matched_skills_highlight.js
+│ ├── css/
+│ │ └── matched_skills_highlight.css
+│ └── xml/
+│ └── matched_skills_highlight.xml
